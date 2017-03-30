@@ -1,16 +1,20 @@
 {% load static from staticfiles %}
+{% load course_extras %}
 
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    {% block static %}{% endblock %}
 </head>
 <body>
 <div class="site-container">
+    <div>{% nav_courses_list %}</div>
+    <nav>
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'list' %}">Courses</a>
+    </nav>
+    <p>Don't miss our latest course {% newest_course %}</p>
     {% block content %}
 
     {% endblock %}

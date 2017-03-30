@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 # Create your models here.
 class Course(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -16,6 +17,7 @@ class Course(models.Model):
 class Step(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    content = models.TextField(blank=True, default='')
     order = models.IntegerField(default=0)
     # creates steps to be related to a single course
     course = models.ForeignKey(Course)

@@ -8,7 +8,8 @@ from .models import Course, Step
 def course_list(request):
     # Gets all the stuff in the db
     courses = Course.objects.all()
-    return render(request, 'courses/course_list.html', {'courses': courses})
+    email = 'questions@learning.com'
+    return render(request, 'courses/course_list.html', {'courses': courses, 'email': email})
 
 
 # we provide an primary key through the url to get the course

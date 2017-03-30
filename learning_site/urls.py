@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^courses/', include('courses.urls')),
     url(r'^admin/', admin.site.urls),
     # add our url, first thing is an empty regex then function
-    url(r'^$', views.homepage),
+    url(r'^$', views.homepage, name='homepage'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
